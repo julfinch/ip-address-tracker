@@ -1,54 +1,60 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css" type="text/css" />
   <title>IP Address Tracker</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+
+
 </head>
-<body>
-  <header class="">
-    <h1>
+<body class="min-h-screen container">
+  <header class="px-5 md:px-28 flex w-screen flex-col justify-center">
+    <h1 class="text-xl text-white text-center mb-4 md:mb-7 font-bold">
       IP Address Tracker
     </h1>
     <form action="" method="get" accept-charset="utf-8">
-      <div class="">
+      <div class="flex flex-row justify-center mb-6 md:mb-9">
         <input 
           type="text"
           placeholder="Search for any IP address or domain"
           name="" 
           id="text" 
-          value="" />
-        <input class="" 
-          type="submit" 
+          class="h-12 w-screen md:w-96 rounded-l-xl rounded-r-none p-4" />
+        <input 
+          type="" 
           name="" 
           id="submit" 
-          value="" />
+          class="h-12 w-12 bg-red-700 rounded-r-xl rounded-l-none" />
       </div>
     </form>
   
-    <section id="output">
-      <div id="ip">
-       <span>IP Address</span>
-      </div>  
-  Location
-  Timezone
-    UTC <!-- add offset value dynamically using the API -->
-  ISP  
+    <section id="output" class="md:w-full h-32 md:h-28 -mb-24 md:-mb-24 bg-white border border-black rounded-xl flex flex-col md:flex-row justify-evenly text-center md:text-left h-64 py-4 md:justify-between">
+      <div class="md:box-border md:py-0 md:px-5 w-full break-all">
+       <span class="text-[9px] text-gray-400 font-bold tracking-widest uppercase">IP Address</span>
+       <p id="ip" class="bg-red-300 h-0 font-bold text-lg md:text-xl">192.212.174.110</p>
+      </div>
+      <div class="md:px-5 md:border-l md:border-gray-300 w-full break-all">
+        <span class="text-[9px] text-gray-400 font-bold tracking-widest uppercase">Location</span>
+        <p id="location" class="font-bold text-lg md:text-xl">Brooklyn, NY 10001</p>
+      </div>
+      <div class="md:px-5 md:border-l md:border-gray-300 w-full break-all">
+        <span class="text-[9px] text-gray-400 font-bold tracking-widest uppercase">Timezone</span>
+        <p id="timezone" class="font-bold text-lg md:text-xl">UTC -05:00</p>
+      </div>
+      <div class="md:px-5 md:border-l md:border-gray-300 w-full break-all">
+        <span class="text-[9px] text-gray-400 font-bold tracking-widest uppercase">ISP</span>
+        <p id="isp" class="font-bold text-lg md:text-xl">SpaceX Starlink</p>
+      </div>
+     <!--UTC add offset value dynamically using the API -->
     </section>
 
   </header>
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    <section id="map">
+      
+    </section>
 </body>
 </html>
