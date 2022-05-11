@@ -21,12 +21,12 @@ body {
 }
 
 header {
-  background: url('./images/pattern-bg.png') no-repeat center center/cover;
+  background: url(./images/pattern-bg.png) no-repeat center center/cover;
   height: 30vh;
 }
 
 form #submit {
-  background: url('./images/icon-arrow.svg') no-repeat center center;
+  background: url(./images/icon-arrow.svg) no-repeat center center;
   background-color: black;
 }
 
