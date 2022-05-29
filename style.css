@@ -34,37 +34,30 @@ form #submit {
   line-height: 90%;
 }
 
-/*
-form {
-  display: flex;
-  flex-direction: row;
-  text-align: center;
+#map {
+  height: 70vh;
 }
 
-form #text {
-  font-size: 18px;
-  font-weight: 400;
-  padding: 10px 20px;
-  height: 3rem;
-  width: 25rem;
-  border-radius: 10px 0 0 10px;
-  cursor: pointer;
+.modal .o {
+  width: 5%;
+  top: 35%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+  animation: rotate 2s infinite linear;
+  animation-play-state: paused;
 }
 
-form #submit {
-  background: url('/images/icon-arrow.svg') no-repeat center center;
-  background-color: var(--primary-color);
-  height: 3rem;
-  width: 3rem;
-  cursor: pointer;
-  border-radius: 0 10px 10px 0;
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-#output {
-  height: 8rem;
-  background: #fff;
-  border: 1px solid black;
-  border-radius: 10px;
-  width: 90%;
-} 
-*/
+@media only screen and (max-width: 37.5em) {
+  #map {
+    height: 52vh;
+  }
+}
