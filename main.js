@@ -57,7 +57,7 @@ class IPAddressTracker{
         inputIP.value = "";
         modal.style.display = "block";
         svg.style.animationPlayState = "running";
-        const request = fetch(`https://geo.ipify.org/api/v1?apiKey=${API_KEY}&ipAddress=${ip}`);
+        const request = fetch(`https://geo.ipify.org/api/v1?apiKey=at_WH5khRzRAmSnAEt93ZSLPpARLIdXo&ipAddress=${ip}`);
 
         request.then(reponse => reponse.json()).then(
             function(data){
