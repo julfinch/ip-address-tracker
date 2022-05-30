@@ -1,9 +1,9 @@
 const formEl = document.querySelector('form');
 const ipInputEl = document.querySelector('.ip-input');
-const ipInputEl = document.querySelector('.ip-info');
-const ipInputEl = document.querySelector('.location-info');
-const ipInputEl = document.querySelector('.timezone-info');
-const ipInputEl = document.querySelector('.isp-info');
+const ipEl = document.querySelector('.ip-info');
+const locationEl = document.querySelector('.location-info');
+const timezoneEl = document.querySelector('.timezone-info');
+const ispEl = document.querySelector('.isp-info');
 
 const modal = document.getElementById('modal');
 const errorMsgEl = document.getElementById('error-message');
@@ -30,16 +30,16 @@ const marker = L.marker([0, 0], {icon: locationIcon}).addTo(map);
 
 formEl.onsubmit = (e) => {
     e.preventDefault();
-
+    
     fetch(`https://ipapi.co/${ipInputEl.value}/json/`)
         .then(res => res.json())
         .then(data => renderResults(data))
         .catch(error => displayError(error));
-
-    e.target.reset();    
+    
+    e.target.reset();
 }
 
-fetch('https://ipapi.com/json/')
+fetch('https://ipapi.co/json/')
     .then(res => res.json())
     .then(data => renderResults(data))
     .catch(error => displayError(error));
@@ -51,10 +51,10 @@ function renderResults(data) {
     ipEl.textContent = data.ip;
     locationEl.textContent = `${data.city}, ${data.region}, ${data.country_name}`;
     if (data.utc_offset !== null) {
-        timezone.El.textContent = 'UTC: ' + data.utc_offset.slice(0, 3) + ':' + data.utc_offset.slice(3);
+        timezoneEl.textContent = 'UTC: ' + data.utc_offset.slice(0, 3) + ':' + data.utc_offset.slice(3);
     }
     else {
-        timezone.El.textContent = data.timezone;
+        timezoneEl.textContent = data.timezone;
     }
     ispEl.textContent = data.org;
     map.setView([data.latitude, data.longitude], 13);
