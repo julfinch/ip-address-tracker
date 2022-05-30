@@ -6,69 +6,74 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css" type="text/css" />
+  
+  <!-- Font Awesome Icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+  integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+
+  <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" 
   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" 
   crossorigin="" />
   
-  <script defer src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" 
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" 
   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" 
   crossorigin=""></script>
-  
-  <script defer src="main.js" type="module"></script>
  
   <title>IP Address Tracker</title>
 
 </head>
 <body class="min-h-screen container">
-  <div class="modal w-screen h-screen bg-black bg-opacity-5 absolute top-0 z-50 text-center ">
-    <svg class="o block absolute"><use xlink:href = "images/icons.svg#icon-loader" fill="black"></use></svg>
-  </div>
-  
-  <header class="px-5 md:px-28 flex w-screen flex-col justify-center">
-    <h1 class="text-xl text-white text-center mb-4 md:mb-7 font-bold">
-      IP Address Tracker
-    </h1>
-    <form action="" accept-charset="utf-8">
-      <div class="flex flex-row justify-center mb-6 md:mb-9">
-        <input 
-          type="text"
-          placeholder="Search for any IP address or domain"
-          name="ip-address" 
-          id="ip-address" 
-          class="app__input--ip h-12 w-screen md:w-96 rounded-l-xl rounded-r-none p-4" />
-        <input 
-          type="submit" 
-          name="" 
-          id="submit" 
-          class="btn h-12 w-12 rounded-r-xl rounded-l-none" />
-      </div>
-    </form>
-  
-    <section id="output" class="md:w-full h-32 md:h-28 -mb-24 md:-mb-24 bg-white border border-black rounded-xl flex flex-col md:flex-row justify-evenly text-center md:text-left h-64 py-4 md:justify-between">
-      <div class="md:box-border md:py-0 md:px-5 w-full break-all">
-       <span class=text-[9px] text-gray-400 font-bold tracking-widest uppercase">IP Address</span>
-       <p class="user-ip bg-red-300 h-0 font-bold text-lg md:text-xl">--</p>
-      </div>
-      <div class="md:px-5 md:border-l md:border-gray-300 w-full break-all">
-        <span class="text-[9px] text-gray-400 font-bold tracking-widest uppercase">Location</span>
-        <p class="user-location font-bold text-lg md:text-xl">--</p>
-      </div>
-      <div class="md:px-5 md:border-l md:border-gray-300 w-full break-all">
-        <span class="text-[9px] text-gray-400 font-bold tracking-widest uppercase">Timezone</span>
-        <p class="user-timezone font-bold text-lg md:text-xl">--</p>
-      </div>
-      <div class="md:px-5 md:border-l md:border-gray-300 w-full break-all">
-        <span class="user-service-name text-[9px] text-gray-400 font-bold tracking-widest uppercase">ISP</span>
-        <p class="user-service-value font-bold text-lg md:text-xl">--</p>
-      </div>
-     <!--UTC add offset value dynamically using the API -->
-    </section>
-
-  </header>
-    <div id="map" class="w-screen md:h-full bottom-0 bg-white absolute z-0">
-      
-    </div>
+  <main>
+    <header class="px-5 md:px-28 flex w-screen flex-col justify-center">
+      <h1 class="text-xl text-white text-center mb-4 md:mb-7 font-bold">
+        IP Address Tracker
+      </h1>
+      <form action="" accept-charset="utf-8">
+        <div class="flex flex-row justify-center mb-6 md:mb-9">
+          <input 
+            type="text"
+            placeholder="Search for any IP address or domain"
+            class="ip-input h-12 w-screen md:w-96 rounded-l-xl rounded-r-none p-4" />
+          <button 
+            type="submit"
+            id="submit" 
+            class="btn h-12 w-12 rounded-r-xl rounded-l-none" />
+          </button>
+        </div>  
+      </form>
     
+      <section id="output" class="md:w-full h-32 md:h-28 -mb-24 md:-mb-24 bg-white border border-black rounded-xl flex flex-col md:flex-row justify-evenly text-center md:text-left h-64 py-4 md:justify-between">
+        <div class="md:box-border md:py-0 md:px-5 w-full break-all">
+         <span class=text-[9px] text-gray-400 font-bold tracking-widest uppercase">IP Address</span>
+         <p class="ip-info bg-red-300 h-0 font-bold text-lg md:text-xl">--</p>
+        </div>
+        <div class="md:px-5 md:border-l md:border-gray-300 w-full break-all">
+          <span class="text-[9px] text-gray-400 font-bold tracking-widest uppercase">Location</span>
+          <p class="location-info font-bold text-lg md:text-xl">--</p>
+        </div>
+        <div class="md:px-5 md:border-l md:border-gray-300 w-full break-all">
+          <span class="text-[9px] text-gray-400 font-bold tracking-widest uppercase">Timezone</span>
+          <p class="timezone-info font-bold text-lg md:text-xl">--</p>
+        </div>
+        <div class="md:px-5 md:border-l md:border-gray-300 w-full break-all">
+          <span class="user-service-name text-[9px] text-gray-400 font-bold tracking-widest uppercase">ISP</span>
+          <p class="isp-info font-bold text-lg md:text-xl">--</p>
+        </div>
+       <!--UTC add offset value dynamically using the API -->
+      </section>
+    </header>
+      <dialog id="modal" class="modal w-screen h-screen bg-black bg-opacity-5 absolute top-0 z-50 text-center ">
+        <h3><i class="fas fa-exclamation-triangle"></i>Ooops!</h3>
+        <p id="error-message"></p>
+        <button id="close-btn"></button>
+      </dialog>
+      <div id="map" class="w-screen md:h-full bottom-0 bg-white absolute z-0">
+      </div>
+  </main>
+  
+  <script src="main.js"></script>
     
 </body>
 </html>
