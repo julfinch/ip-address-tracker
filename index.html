@@ -46,7 +46,7 @@
     
       <section id="output" class="md:w-full h-32 md:h-28 -mb-24 md:-mb-24 bg-white border border-black rounded-xl flex flex-col md:flex-row justify-evenly text-center md:text-left h-64 py-4 md:justify-between">
         <div class="md:box-border md:py-0 md:px-5 w-full break-all">
-         <span class=text-[9px] text-gray-400 font-bold tracking-widest uppercase">IP Address</span>
+         <span class="text-[9px] text-gray-400 font-bold tracking-widest uppercase">IP Address</span>
          <p class="ip-info bg-red-300 h-0 font-bold text-lg md:text-xl">--</p>
         </div>
         <div class="md:px-5 md:border-l md:border-gray-300 w-full break-all">
@@ -58,18 +58,18 @@
           <p class="timezone-info font-bold text-lg md:text-xl">--</p>
         </div>
         <div class="md:px-5 md:border-l md:border-gray-300 w-full break-all">
-          <span class="user-service-name text-[9px] text-gray-400 font-bold tracking-widest uppercase">ISP</span>
+          <span class="text-[9px] text-gray-400 font-bold tracking-widest uppercase">ISP</span>
           <p class="isp-info font-bold text-lg md:text-xl">--</p>
         </div>
        <!--UTC add offset value dynamically using the API -->
       </section>
     </header>
-      <dialog id="modal" class="modal w-screen h-screen bg-black bg-opacity-5 absolute top-0 z-50 text-center ">
+      <dialog id="modal">
         <h3><i class="fas fa-exclamation-triangle"></i>Ooops!</h3>
         <p id="error-message"></p>
         <button id="close-btn"></button>
       </dialog>
-      <div id="map" class="w-screen md:h-full bottom-0 bg-white absolute z-0">
+      <div id="map">
       </div>
   </main>
   
