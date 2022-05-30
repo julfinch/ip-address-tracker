@@ -55,6 +55,8 @@ button[type="submit"]:hover {
 
 #map {
   height: 70vh;
+  width: 100vw;
+  z-index: -1;
 }
 
 #modal {
