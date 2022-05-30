@@ -30,6 +30,21 @@ form #submit {
   background-color: black;
 }
 
+button[type="submit"] {
+  padding: 1rem 1.25rem;
+  border: 1.5px solid var(--very-dark-gray);
+  border-top-right-radius: .75rem;
+  border-bottom-right-radius: .75rem;
+  background-color: var(--very-dark-gray);
+  cursor: pointer;
+  transition: all .25s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: hsl(0, 0%, 28%);
+  border: 1.5px solid hsl(0, 0%, 28%);
+}
+
 #output p {
   line-height: 90%;
 }
