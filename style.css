@@ -20,6 +20,10 @@ body {
   scroll-behavior: smooth;
 }
 
+main {
+  min-height: 100vh;
+}
+
 header {
   background: url(./images/pattern-bg.png) no-repeat center center/cover;
   height: 30vh;
