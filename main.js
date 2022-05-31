@@ -65,10 +65,10 @@ function renderResults(data) {
 }
 
 function displayError(e) {
-    modal.style.display = "flex";
     errorMsgEl.textContent = e;
+    modal.showModal();
 }
 
 closeBtn.onclick = () => {
-    modal.style.display = "none";
+    modal.close();
 }
