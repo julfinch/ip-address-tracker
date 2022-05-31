@@ -73,7 +73,6 @@ button[type="submit"]:hover {
   height: 11rem;
   margin: auto;
   border: none; 
-  z-index: -1;
   display: none; 
   align-items: center; 
   flex-direction: column; 
