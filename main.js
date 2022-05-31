@@ -75,5 +75,5 @@ function displayError(e) {
 }
 
 closeBtn.onclick = () => {
-    modal.close();
+    modal.style.display = "none";
 }

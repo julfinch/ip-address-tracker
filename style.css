@@ -76,4 +76,5 @@ button[type="submit"]:hover {
   align-items: center; 
   flex-direction: column; 
   gap: 1rem;
+  z-index: 50;
 }
