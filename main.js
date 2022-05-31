@@ -64,9 +64,14 @@ function renderResults(data) {
     // marker.bindPopup(`<b>${data.ip}</b>`).openPopup();
 }
 
+
+function popModal() {
+    modal.style.display = "flex";
+}
+
 function displayError(e) {
     errorMsgEl.textContent = e;
-    modal.showModal();
+    popModal();
 }
 
 closeBtn.onclick = () => {
