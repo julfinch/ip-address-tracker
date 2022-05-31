@@ -67,3 +67,14 @@ button[type="submit"]:hover {
   background-color: dimgray;
 }
 
+#modal {
+  width: 24rem;
+  height: 11rem;
+  margin: auto;
+  position: absolute; 
+  border: none; 
+  display: flex; 
+  align-items: center; 
+  flex-direction: column; 
+  gap: 1rem;
+}
