@@ -22,7 +22,7 @@ L.tileLayer(tileUrl, {
 
 const locationIcon = L.icon({
     iconUrl: 'images/icon-location.svg',
-    iconSize: [35, 28],
+    iconSize: [35, 10],
     iconAnchor: [15, 15]
 });
 
@@ -50,9 +50,9 @@ function renderResults(data) {
     }
     ipEl.textContent = data.ip;
     locationEl.textContent = 
-    "{data.city},\n" +
-    "{data.region},\n" +
-    "{data.country_name}";
+    "${data.city},\n" +
+    "${data.region},\n" +
+    "${data.country_name}";
     if (data.utc_offset !== null) {
         timezoneEl.textContent = 'UTC: ' + data.utc_offset.slice(0, 3) + ':' + data.utc_offset.slice(3);
     }
