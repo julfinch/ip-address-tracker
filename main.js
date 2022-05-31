@@ -22,7 +22,7 @@ L.tileLayer(tileUrl, {
 
 const locationIcon = L.icon({
     iconUrl: 'images/icon-location.svg',
-    iconSize: [35, 10],
+    iconSize: [27, 35],
     iconAnchor: [15, 15]
 });
 
@@ -49,10 +49,9 @@ function renderResults(data) {
         throw(`${data.reason}`);
     }
     ipEl.textContent = data.ip;
-    locationEl.textContent = 
-    "${data.city},\n" +
-    "${data.region},\n" +
-    "${data.country_name}";
+    locationEl.textContent = `${data.city},
+    ${data.region},
+    ${data.country_name}`;
     if (data.utc_offset !== null) {
         timezoneEl.textContent = 'UTC: ' + data.utc_offset.slice(0, 3) + ':' + data.utc_offset.slice(3);
     }
@@ -66,8 +65,8 @@ function renderResults(data) {
 }
 
 function displayError(e) {
-    errorMsgEl.textContent = e;
     modal.style.display = "flex";
+    errorMsgEl.textContent = e;
 }
 
 closeBtn.onclick = () => {
