@@ -50,9 +50,9 @@ function renderResults(data) {
     }
     ipEl.textContent = data.ip;
     locationEl.textContent = 
-    `${data.city},
-    ${data.region},
-    ${data.country_name}`;
+    "{data.city},\n" +
+    "{data.region},\n" +
+    "{data.country_name}";
     if (data.utc_offset !== null) {
         timezoneEl.textContent = 'UTC: ' + data.utc_offset.slice(0, 3) + ':' + data.utc_offset.slice(3);
     }
@@ -67,10 +67,9 @@ function renderResults(data) {
 
 function displayError(e) {
     errorMsgEl.textContent = e;
-    modal.showModal();
     modal.style.display = "flex";
 }
 
 closeBtn.onclick = () => {
-    modal.close();
+    modal.style.display = "none";
 }

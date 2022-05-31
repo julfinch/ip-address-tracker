@@ -68,7 +68,6 @@ button[type="submit"]:hover {
 }
 
 #modal {
-  position: relative;
   width: 24rem;
   height: 11rem;
   margin: auto;
