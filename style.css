@@ -68,10 +68,12 @@ button[type="submit"]:hover {
 }
 
 #modal {
+  position: relative;
   width: 24rem;
   height: 11rem;
   margin: auto;
   border: none; 
+  z-index: -1;
   display: flex; 
   align-items: center; 
   flex-direction: column; 
