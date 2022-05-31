@@ -22,7 +22,7 @@ L.tileLayer(tileUrl, {
 
 const locationIcon = L.icon({
     iconUrl: 'images/icon-location.svg',
-    iconSize: [27, 35],
+    iconSize: [25, 35],
     iconAnchor: [15, 15]
 });
 
